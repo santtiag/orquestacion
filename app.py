@@ -39,7 +39,7 @@ def atencion(identificador):
     paciente, error, codigo = consultar(PACIENTES_URL, f'/pacientes/{identificador}')
     if error:
         return jsonify({'estado': 'ERROR', 'servicio': 'pacientes', 'mensaje': error}), codigo
-    laboratorio, error, codigo = consultar(LABORATORIO_URL, f'/laboratorio/{identificador}')
+    laboratorio, error, codigo = consultar(LABORATORIO_URL, f'/ordenes/{identificador}')
     if error:
         return jsonify({'estado': 'ERROR', 'servicio': 'laboratorio', 'mensaje': error}), codigo
     return jsonify({
